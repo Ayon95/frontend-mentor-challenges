@@ -15,8 +15,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/qr-code-component-using-semantic-html-and-css-OcHwfG3iS)
-- Live Site URL: [Add live site URL here](https://fm-qr-code-challenge.netlify.app/)
+- [Solution](https://www.frontendmentor.io/solutions/qr-code-component-using-semantic-html-and-css-OcHwfG3iS)
+- [Live site](https://fm-qr-code-challenge.netlify.app/)
 
 ## Built with
 
