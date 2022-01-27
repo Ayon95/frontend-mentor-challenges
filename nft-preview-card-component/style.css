@@ -50,14 +50,14 @@ main {
   padding: var(--base-spacing);
 }
 
-footer {
+.site__footer {
   padding: var(--base-spacing);
   color: var(--color-white);
   text-align: center;
   font-weight: 300;
 }
 
-footer a {
+.site__footer a {
   color: var(--color-soft-blue);
   text-decoration: none;
 }
