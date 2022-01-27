@@ -42,6 +42,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -59,7 +63,6 @@ main {
 
 .site__footer a {
   color: var(--color-soft-blue);
-  text-decoration: none;
 }
 
 .card {
@@ -109,6 +112,9 @@ main {
 .card__title {
   margin: var(--base-spacing) 0;
   font-size: calc(var(--base-font-size) + 0.4rem);
+}
+
+.card__title a {
   color: var(--color-white);
 }
 
@@ -146,12 +152,12 @@ main {
   color: var(--color-white);
 }
 
-.card__title,
+.card__title a,
 .card__author {
   transition: color 0.3s;
 }
 
-.card__title:hover,
+.card__title a:hover,
 .card__author:hover {
   color: var(--color-cyan);
   cursor: pointer;
