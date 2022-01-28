@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   font-family: "Red Hat Display", sans-serif;
   font-size: var(--base-font-size);
+  background-color: var(--color-pale-blue);
   background-image: url("./images/pattern-background-mobile.svg");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -78,7 +79,7 @@ a:hover {
   width: 100%;
   max-width: 36rem;
   border-radius: calc(var(--border-radius) * 2);
-  box-shadow: 0 2rem 5rem hsla(224, 23%, 55%, 0.5);
+  box-shadow: 0 2rem 3rem hsla(224, 23%, 55%, 0.3);
   overflow: hidden;
 }
 
