@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+  </head>
+  <body>
+    <main>
+      <article class="card">
+        <div class="card__image-container">
+          <picture>
+            <source
+              media="(min-width: 46.875em)"
+              srcset="./images/image-header-desktop.jpg"
+            />
+            <img
+              class="card__image"
+              src="./images/image-header-mobile.jpg"
+              alt="Three women in a workplace setting working on their laptops and conversing"
+            />
+          </picture>
+        </div>
+        <div class="card__text-content">
+          <h2 class="card__title">
+            Get <span>insights</span> that help your business grow.
+          </h2>
+          <p class="card__description">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <ul class="card__stats">
+            <li class="card__stat">
+              <h3 class="card__stat-title">10k+</h3>
+              <p class="card__stat-text">companies</p>
+            </li>
+            <li class="card__stat">
+              <h3 class="card__stat-title">314</h3>
+              <p class="card__stat-text">templates</p>
+            </li>
+            <li class="card__stat">
+              <h3 class="card__stat-title">12M+</h3>
+              <p class="card__stat-text">queries</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/Ayon95" target="_blank"
+          >Mushfiq Rahman</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
