@@ -1,4 +1,4 @@
-# Frontend Mentor - QR code component solution
+# Frontend Mentor - Order summary component solution
 
 This is a solution to the [Order summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj).
 
