@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-bright-orange: hsl(31, 77%, 52%);
+  --color-dark-cyan: hsl(184, 100%, 22%);
+  --color-very-dark-cyan: hsl(179, 100%, 13%);
+  --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --color-very-light-gray: hsl(0, 0%, 95%);
+
+  --base-spacing: 2rem;
+  --spacing-2x: calc(var(--base-spacing) * 2);
+  --spacing-3x: calc(var(--base-spacing) * 3);
+
+  --base-font-size: 1.5rem;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-very-light-gray);
+  font-family: "Lexend Deca", "Big Shoulders Display", sans-serif;
+  font-size: var(--base-font-size);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--base-spacing);
+  min-height: 90vh;
+}
+
+p {
+  line-height: 1.6;
+}
+
+footer {
+  padding: var(--base-spacing);
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--color-dark-cyan);
+}
+
+.cards-container {
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.card {
+  max-width: 30rem;
+  padding: var(--spacing-2x);
+  color: var(--color-transparent-white);
+}
+
+.card--sedan {
+  background-color: var(--color-bright-orange);
+}
+
+.card--suv {
+  background-color: var(--color-dark-cyan);
+}
+
+.card--luxury {
+  background-color: var(--color-very-dark-cyan);
+}
+
+.card__title {
+  /* Subtracting 2px to negate the extra space of line height */
+  margin: calc(var(--spacing-2x) - 2px) 0;
+  font-family: "Big Shoulders Display";
+  font-size: calc(var(--base-font-size) * 2.4);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.card__description {
+  margin-bottom: calc(var(--base-spacing) + 1rem);
+}
+
+.card__button {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background-color: var(--color-very-light-gray);
+  text-decoration: none;
+  border-radius: 5rem;
+}
+
+.card--sedan .card__button {
+  color: var(--color-bright-orange);
+}
+
+.card--suv .card__button {
+  color: var(--color-dark-cyan);
+}
+
+.card--luxury .card__button {
+  color: var(--color-very-dark-cyan);
+}
+
+/* Media queries */
+
+/* 56.25 * 16px = 900px */
+@media only screen and (min-width: 56.25em) {
+  .cards-container {
+    display: flex;
+  }
+
+  .card__description {
+    margin-bottom: calc(var(--spacing-3x) + 1rem);
+  }
+
+  .card__button {
+    transition: background-color 0.3s, color 0.3s, outline 0.3s;
+  }
+
+  .card__button:hover {
+    background-color: transparent;
+    color: var(--color-very-light-gray);
+    outline: 2px solid var(--color-very-light-gray);
+  }
+}
