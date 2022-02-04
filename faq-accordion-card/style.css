@@ -48,6 +48,11 @@ footer {
 	text-align: center;
 }
 
+footer a {
+	text-decoration: none;
+	color: rgb(193, 214, 247);
+}
+
 .card {
 	width: 100%;
 	max-width: 34rem;
@@ -63,9 +68,9 @@ footer {
 	width: min(68vw, 25.5rem);
 	height: min(52vw, 20rem);
 	/* negative top margin will pull the element up */
-	margin: -14rem auto var(--spacing-3x) auto;
-	background-image: url('./images/bg-pattern-mobile.svg'),
-		url('./images/illustration-woman-online-mobile.svg');
+	/* The negative top margin will stay between -14rem and -10rem */
+	margin: clamp(-14rem, -40vw, -10rem) auto var(--spacing-3x) auto;
+	background-image: url('./images/illustration-woman-online-mobile.svg');
 	background-repeat: no-repeat;
 }
 
