@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-violet: hsl(257, 40%, 49%);
+  --color-soft-magenta: hsl(300, 69%, 71%);
+
+  --base-spacing: 3rem;
+  --spacing-2x: calc(var(--base-spacing) * 2);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-violet);
+  background-image: url("./images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Open Sans", "Poppins", sans-serif;
+  font-size: 1.7rem;
+  color: var(--color-white);
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+header {
+  padding: var(--base-spacing);
+}
+
+main {
+  padding: var(--base-spacing);
+}
+
+footer {
+  padding: calc(var(--base-spacing) / 2);
+  text-align: center;
+}
+
+.logo svg {
+  width: 14rem;
+}
+
+.hero {
+  display: grid;
+  row-gap: var(--spacing-2x);
+}
+
+.hero__illustration {
+  width: 100%;
+}
+
+.hero__text-content {
+  text-align: center;
+}
+
+.hero__title {
+  font-family: "Poppins";
+}
+
+.hero__subtitle {
+  margin: calc(var(--base-spacing) / 2) 0 var(--base-spacing) 0;
+}
+
+.hero__button {
+  padding: 1rem 8rem 1.2rem 8rem;
+  background-color: var(--color-white);
+  color: var(--color-violet);
+  border-radius: 3rem;
+  box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.3);
+}
+
+.hero__social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__social-icon:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.hero__social-icon-link {
+  padding: 7px;
+  border: 1px solid var(--color-white);
+  /* to get rid of extra space below that is caused by default line height */
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.hero__social-icon-link svg {
+  width: 1.6rem;
+  height: auto;
+  fill: var(--color-white);
+}
