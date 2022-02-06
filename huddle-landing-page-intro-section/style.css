@@ -13,6 +13,13 @@
 
   --base-spacing: 3rem;
   --spacing-2x: calc(var(--base-spacing) * 2);
+  --fluid-spacing: clamp(
+    var(--base-spacing),
+    4vw,
+    calc(var(--base-spacing) * 1.8)
+  );
+
+  --color-transition-duration: 0.3s;
 }
 
 html {
@@ -21,6 +28,7 @@ html {
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--color-violet);
   background-image: url("./images/bg-mobile.svg");
   background-repeat: no-repeat;
@@ -31,7 +39,7 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 a {
@@ -40,25 +48,31 @@ a {
 }
 
 header {
-  padding: var(--base-spacing);
+  padding: var(--fluid-spacing);
 }
 
 main {
-  padding: var(--base-spacing);
+  padding: calc(var(--base-spacing) * 0.67) var(--fluid-spacing)
+    var(--base-spacing) var(--fluid-spacing);
 }
 
 footer {
-  padding: calc(var(--base-spacing) / 2);
+  font-size: 1.2rem;
   text-align: center;
 }
 
+footer a {
+  color: var(--color-soft-magenta);
+}
+
 .logo svg {
-  width: 14rem;
+  width: clamp(14rem, 20vw, 18rem);
 }
 
 .hero {
   display: grid;
   row-gap: var(--spacing-2x);
+  min-height: 70vh;
 }
 
 .hero__illustration {
@@ -74,7 +88,10 @@ footer {
 }
 
 .hero__subtitle {
-  margin: calc(var(--base-spacing) / 2) 0 var(--base-spacing) 0;
+  max-width: 50ch;
+  font-size: 1.6rem;
+  margin: calc(var(--base-spacing) / 2) auto var(--base-spacing) auto;
+  opacity: 0.85;
 }
 
 .hero__button {
@@ -83,6 +100,8 @@ footer {
   color: var(--color-violet);
   border-radius: 3rem;
   box-shadow: 0 4px 1rem rgba(0, 0, 0, 0.3);
+  transition: background-color var(--color-transition-duration),
+    color var(--color-transition-duration);
 }
 
 .hero__social-icons {
@@ -101,10 +120,71 @@ footer {
   /* to get rid of extra space below that is caused by default line height */
   line-height: 0;
   border-radius: 50%;
+  transition: border-color var(--color-transition-duration);
 }
 
 .hero__social-icon-link svg {
   width: 1.6rem;
   height: auto;
   fill: var(--color-white);
+  transition: fill var(--color-transition-duration);
+}
+
+/* Media queries */
+
+/* 62.5em = 1000px */
+@media only screen and (min-width: 62.5em) {
+  html {
+    font-size: 70%;
+  }
+  body {
+    background-image: url("./images/bg-desktop.svg");
+    background-size: cover;
+  }
+
+  .hero {
+    grid-template-columns: 1.3fr 1fr;
+    column-gap: calc(var(--base-spacing) * 1.33);
+  }
+
+  .hero__title {
+    font-size: 3.4rem;
+    max-width: 18ch;
+  }
+
+  .hero__text-content {
+    margin-top: calc(var(--base-spacing) * 1.33);
+    text-align: left;
+  }
+
+  .hero__subtitle {
+    margin: calc(var(--base-spacing) / 2) 0 var(--base-spacing) 0;
+  }
+
+  .hero__social-icons {
+    justify-content: flex-end;
+    align-self: end;
+    grid-column: 1/-1;
+  }
+
+  .hero__button {
+    padding: 1rem 5rem 1.2rem 5rem;
+  }
+}
+
+/* Media query for detecting primary input mechanism that supports hover state */
+
+@media only screen and (hover: hover) and (pointer: fine) {
+  .hero__button:hover {
+    background-color: var(--color-soft-magenta);
+    color: var(--color-white);
+  }
+
+  .hero__social-icon-link:hover {
+    border-color: var(--color-soft-magenta);
+  }
+
+  .hero__social-icon-link:hover svg {
+    fill: var(--color-soft-magenta);
+  }
 }
