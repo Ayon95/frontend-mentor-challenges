@@ -16,6 +16,11 @@
 
   --base-spacing: 2.5rem;
   --base-font-size: 1.6rem;
+  --card-fluid-spacing: clamp(
+    var(--base-spacing),
+    5vw,
+    calc(var(--base-spacing) * 1.6)
+  );
 }
 
 html {
@@ -33,10 +38,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 7.56rem);
 }
 
 footer {
   padding: var(--base-spacing);
+  text-align: center;
   line-height: 1.6;
 }
 
@@ -48,16 +55,16 @@ footer a {
 .card {
   background-color: var(--color-light-gray);
   border-radius: 4px;
-  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+  box-shadow: 2.5rem 2rem 3rem hsla(218, 22%, 67%, 0.42);
   overflow: hidden;
 }
 
 .card__intro {
-  padding: var(--base-spacing);
+  padding: var(--card-fluid-spacing);
 }
 
 .card__main-title {
-  font-size: 2.2rem;
+  font-size: calc(var(--base-font-size) * 1.38);
   color: var(--color-cyan);
   margin-bottom: calc(var(--base-spacing) * 0.8);
 }
@@ -65,6 +72,11 @@ footer a {
 .card__subtitle {
   margin-bottom: calc(var(--base-spacing) * 0.65);
   color: var(--color-bright-yellow);
+  font-size: clamp(
+    var(--base-font-size),
+    4vw,
+    calc(var(--base-font-size) * 1.13)
+  );
   font-weight: bold;
 }
 
@@ -75,7 +87,7 @@ footer a {
 
 .card__section {
   color: var(--color-light-gray);
-  padding: var(--base-spacing);
+  padding: var(--card-fluid-spacing);
 }
 
 .card__section-title {
@@ -89,7 +101,7 @@ footer a {
 .card__subscription-price {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .card__subscription-price > :first-child {
@@ -103,7 +115,7 @@ footer a {
 }
 
 .card__subscription-details {
-  margin-bottom: calc(var(--base-spacing) * 1.1);
+  margin-bottom: calc(var(--base-spacing) * 1.3);
   opacity: 0.9;
 }
 
@@ -129,7 +141,8 @@ footer a {
 .card__benefits {
   list-style: none;
   color: var(--color-light-gray);
-  opacity: 0.8;
+  font-size: calc(var(--base-font-size) * 0.92);
+  opacity: 0.9;
 }
 
 .card__benefit:not(:last-child) {
@@ -137,6 +150,23 @@ footer a {
 }
 
 /* Media queries */
+
+@media only screen and (min-width: 600px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 65rem;
+  }
+
+  .card__intro {
+    grid-column: 1 / -1;
+  }
+
+  .card__description {
+    max-width: 57ch;
+  }
+}
 
 @media only screen and (hover: hover) and (pointer: fine) {
   .card__button:hover {
