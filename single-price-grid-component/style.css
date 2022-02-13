@@ -8,9 +8,12 @@
 
 :root {
   --color-cyan: hsl(179, 62%, 43%);
+  --color-light-cyan: hsl(179, 62%, 48%);
   --color-bright-yellow: hsl(71, 73%, 54%);
   --color-light-gray: hsl(204, 43%, 93%);
   --color-grayish-blue: hsl(218, 22%, 67%);
+
+  --base-spacing: 3rem;
 }
 
 html {
@@ -21,4 +24,65 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Karla", sans-serif;
+}
+
+.card {
+  background-color: var(--color-light-gray);
+}
+
+.card__main-title {
+  color: var(--color-cyan);
+}
+
+.card__subtitle {
+  color: var(--color-bright-yellow);
+  font-weight: bold;
+}
+
+.card__description {
+  color: var(--color-grayish-blue);
+}
+
+.card__section {
+  color: var(--color-light-gray);
+  padding: var(--base-spacing);
+}
+
+.card__section-title {
+}
+
+.card__section--subscription {
+  background-color: var(--color-cyan);
+}
+
+.card__subscription-price > :first-child {
+  font-weight: bold;
+}
+
+.card__subscription-price > :last-child {
+  opacity: 0.5;
+}
+
+.card__subscription-details {
+  opacity: 0.9;
+}
+
+.card__button {
+  background-color: var(--color-bright-yellow);
+  padding: 1rem;
+  border: none;
+  color: var(--color-light-gray);
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+  border-radius: 4px;
+}
+
+.card__section--benefits {
+  background-color: var(--color-light-cyan);
+}
+
+.card__benefits {
+  list-style: none;
+  color: var(--color-light-gray);
+  opacity: 0.8;
 }
