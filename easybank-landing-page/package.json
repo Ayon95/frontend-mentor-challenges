@@ -1,0 +1,12 @@
+{
+  "name": "easybank-landing-page",
+  "version": "1.0.0",
+  "description": "easybank landing page",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Mushfiq Rahman",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.7"
+  }
+}

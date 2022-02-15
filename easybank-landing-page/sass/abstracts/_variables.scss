@@ -1,0 +1,25 @@
+/*----------- Colors ----------- */
+
+// Primary colors
+$color-dark-blue: hsl(233, 26%, 24%);
+$color-lime-green: hsl(136, 65%, 51%);
+$color-bright-cyan: hsl(192, 70%, 51%);
+
+// Neutral colors
+$color-grayish-blue: hsl(233, 8%, 62%);
+$color-light-grayish-blue: hsl(220, 16%, 96%);
+$color-very-light-gray: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
+// Brand colors
+$color-brand-primary: $color-lime-green;
+$color-brand-secondary: $color-bright-cyan;
+$color-brand-tertiary: $color-dark-blue;
+
+// Typography colors
+$color-body-text: $color-grayish-blue;
+$color-body-text-alternative: $color-grayish-blue;
+
+/*----------- Typography ----------- */
+
+$base-font-size: 1.8rem;
