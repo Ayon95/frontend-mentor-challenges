@@ -1,7 +1,12 @@
+@use "sass:map";
+
 /*----------- Colors ----------- */
 
 // Primary colors
-$color-dark-blue: hsl(233, 26%, 24%);
+$color-dark-blue: (
+  "opaque": hsl(233, 26%, 24%),
+  "semi-transparent": hsla(233, 26%, 24%, 0.7),
+);
 $color-lime-green: hsl(136, 65%, 51%);
 $color-bright-cyan: hsl(192, 70%, 51%);
 
@@ -14,7 +19,7 @@ $color-white: hsl(0, 0%, 100%);
 // Brand colors
 $color-brand-primary: $color-lime-green;
 $color-brand-secondary: $color-bright-cyan;
-$color-brand-tertiary: $color-dark-blue;
+$color-brand-tertiary: map.get($color-dark-blue, "opaque");
 
 // Typography colors
 $color-body-text: $color-grayish-blue;
@@ -23,3 +28,19 @@ $color-body-text-alternative: $color-grayish-blue;
 /*----------- Typography ----------- */
 
 $base-font-size: 1.8rem;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+/*----------- Spacing and UI ----------- */
+
+$base-spacing: 2rem;
+$base-border-radius: 6px;
+
+/*----------- Miscellaneous ----------- */
+
+$nav-menu-container-gradient: linear-gradient(
+  to bottom,
+  map.get($color-dark-blue, "semi-transparent"),
+  transparent
+);
