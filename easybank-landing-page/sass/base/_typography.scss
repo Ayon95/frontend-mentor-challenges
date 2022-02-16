@@ -22,13 +22,26 @@ button {
   &--3 {
     font-size: variables.$base-font-size * 1.06;
   }
+
+  &--4 {
+    font-size: variables.$base-font-size * 0.87;
+  }
 }
 
 .body-text {
   color: variables.$color-body-text;
-  line-height: 1.6;
 
   &--1 {
+    line-height: 1.6;
     font-size: variables.$base-font-size * 0.8;
+  }
+
+  &--2 {
+    line-height: 1.45;
+    font-size: variables.$base-font-size * 0.7;
+  }
+
+  &--3 {
+    font-size: variables.$base-font-size * 0.56;
   }
 }

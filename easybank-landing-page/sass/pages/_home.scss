@@ -2,14 +2,15 @@
 
 // Common styles
 .hero,
-.benefits {
+.benefits,
+.articles {
+  padding: 0 variables.$base-spacing;
   margin-bottom: variables.$section-margin-bottom;
 }
 
 // Hero section
 
 .hero {
-  padding: 0 variables.$base-spacing;
   background-image: url("../images/bg-intro-mobile.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -32,10 +33,23 @@
 // Benefits section
 
 .benefits {
-  padding: 0 variables.$base-spacing;
   text-align: center;
 
   &__subtitle {
     margin: variables.$base-spacing 0 variables.$base-spacing * 3 0;
+  }
+}
+
+// Articles section
+
+.articles {
+  &__list {
+    display: grid;
+    gap: variables.$base-spacing * 1.5;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: variables.$base-spacing * 1.7;
   }
 }
