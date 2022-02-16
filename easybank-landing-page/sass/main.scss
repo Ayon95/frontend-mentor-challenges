@@ -1,5 +1,10 @@
 // Base
 @use "./base/base";
+@use "./base/typography";
 @use "./base/utilities";
+// Components
+@use "./components/button";
 // Layout
 @use "./layout/header";
+// Pages
+@use "./pages/home";

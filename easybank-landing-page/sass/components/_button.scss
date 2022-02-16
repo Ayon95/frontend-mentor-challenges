@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+.button {
+  border: none;
+  padding: 1.5rem 3.2rem;
+  border-radius: 10rem;
+
+  &--primary {
+    background-image: linear-gradient(
+      to right,
+      variables.$color-brand-primary,
+      variables.$color-brand-secondary
+    );
+  }
+}

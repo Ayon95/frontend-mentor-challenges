@@ -1,0 +1,22 @@
+@use "../abstracts/variables";
+
+.hero {
+  padding: 0 variables.$base-spacing;
+  background-image: url("../images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__image {
+    width: 100%;
+    margin-top: -5rem;
+    margin-bottom: variables.$base-spacing * 1.25;
+  }
+
+  &__text-content {
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin: variables.$base-spacing 0 variables.$base-spacing * 1.74 0;
+  }
+}

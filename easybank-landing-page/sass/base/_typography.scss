@@ -1,0 +1,26 @@
+@use "../abstracts/variables";
+
+button {
+  font-family: "Public Sans", sans-serif;
+  font-size: variables.$base-font-size * 0.75;
+  color: variables.$color-white;
+  letter-spacing: 0.5px;
+}
+
+.heading {
+  color: variables.$color-brand-tertiary;
+  font-weight: variables.$font-weight-regular;
+
+  &--1 {
+    font-size: variables.$base-font-size * 2.1;
+  }
+}
+
+.body-text {
+  color: variables.$color-body-text;
+  line-height: 1.6;
+
+  &--1 {
+    font-size: variables.$base-font-size * 0.8;
+  }
+}
