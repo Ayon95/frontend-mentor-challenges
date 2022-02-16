@@ -14,6 +14,14 @@ button {
   &--1 {
     font-size: variables.$base-font-size * 2.1;
   }
+
+  &--2 {
+    font-size: variables.$base-font-size * 1.73;
+  }
+
+  &--3 {
+    font-size: variables.$base-font-size * 1.06;
+  }
 }
 
 .body-text {

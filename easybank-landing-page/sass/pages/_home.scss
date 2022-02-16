@@ -1,5 +1,13 @@
 @use "../abstracts/variables";
 
+// Common styles
+.hero,
+.benefits {
+  margin-bottom: variables.$section-margin-bottom;
+}
+
+// Hero section
+
 .hero {
   padding: 0 variables.$base-spacing;
   background-image: url("../images/bg-intro-mobile.svg");
@@ -18,5 +26,16 @@
 
   &__subtitle {
     margin: variables.$base-spacing 0 variables.$base-spacing * 1.74 0;
+  }
+}
+
+// Benefits section
+
+.benefits {
+  padding: 0 variables.$base-spacing;
+  text-align: center;
+
+  &__subtitle {
+    margin: variables.$base-spacing 0 variables.$base-spacing * 3 0;
   }
 }

@@ -1,0 +1,10 @@
+@use "../abstracts/variables";
+
+.benefit {
+  &:not(:last-child) {
+    margin-bottom: variables.$base-spacing * 1.8;
+  }
+  &__title {
+    margin: variables.$base-spacing 0 variables.$base-spacing * 1.18 0;
+  }
+}
