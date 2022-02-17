@@ -45,3 +45,10 @@ button {
     font-size: variables.$base-font-size * 0.56;
   }
 }
+
+.footer {
+  &__nav-link {
+    color: variables.$color-light-grayish-blue;
+    font-size: variables.$base-font-size * 0.8;
+  }
+}

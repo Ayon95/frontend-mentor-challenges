@@ -6,7 +6,9 @@
 @use "./components/button";
 @use "./components/benefit-card";
 @use "./components/article-preview-card";
+@use "./components/socials";
 // Layout
 @use "./layout/header";
+@use "./layout/footer";
 // Pages
 @use "./pages/home";

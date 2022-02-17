@@ -1,0 +1,24 @@
+@use "../abstracts/variables";
+
+.footer {
+  display: grid;
+  justify-items: center;
+  row-gap: variables.$base-spacing * 1.4;
+  background-color: variables.$color-brand-tertiary;
+  padding: variables.$base-spacing * 2;
+  text-align: center;
+
+  .logo {
+    display: inline-block;
+    margin-bottom: variables.$base-spacing * 1.5;
+  }
+
+  &__nav-list {
+    display: grid;
+    row-gap: variables.$base-spacing * 0.7;
+  }
+
+  .button {
+    margin-bottom: variables.$base-spacing * 1.5;
+  }
+}
