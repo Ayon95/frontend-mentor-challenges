@@ -2,6 +2,7 @@
 @use "../abstracts/mixins";
 
 .header {
+  border: solid red;
   --header-height: 6.5rem;
   position: fixed;
   width: 100%;
@@ -12,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .button {
+    display: none;
   }
 }
 
@@ -44,5 +49,42 @@
 
   &__item:not(:last-child) {
     margin-bottom: variables.$base-spacing * 1.5;
+  }
+}
+
+// Media queries
+
+@include mixins.respond-min(variables.$bp-md) {
+  .header {
+    .button {
+      display: inline-block;
+    }
+  }
+  .primary-nav {
+    &__hamburger-btn {
+      display: none;
+    }
+
+    &__list-container {
+      all: unset;
+      display: block;
+    }
+
+    &__list {
+      all: unset;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: variables.$base-spacing * 1.5;
+      margin-bottom: 0;
+    }
+
+    &__link {
+      color: variables.$color-body-text;
+      font-size: variables.$base-font-size * 0.8;
+    }
   }
 }
