@@ -1,0 +1,30 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.header {
+  @include mixins.site-layout-grid;
+
+  & > * {
+    grid-column: content-start / content-end;
+  }
+}
+
+.main {
+  @include mixins.site-layout-grid;
+
+  & > *:not(.hero) {
+    grid-column: content-start / content-end;
+  }
+
+  .hero {
+    grid-column: full-start / full-end;
+  }
+}
+
+.footer {
+  @include mixins.site-layout-grid;
+
+  & > * {
+    grid-column: content-start / content-end;
+  }
+}

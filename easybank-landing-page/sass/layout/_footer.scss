@@ -1,12 +1,17 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .footer {
-  display: grid;
-  justify-items: center;
-  row-gap: variables.$base-spacing * 1.4;
   background-color: variables.$color-brand-tertiary;
-  padding: variables.$base-spacing * 2;
-  text-align: center;
+  padding: variables.$base-spacing * 2 0;
+  margin-top: 9.7rem;
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    row-gap: variables.$base-spacing * 1.4;
+    text-align: center;
+  }
 
   .logo {
     display: inline-block;
@@ -20,5 +25,32 @@
 
   .button {
     margin-bottom: variables.$base-spacing * 1.5;
+  }
+}
+
+// Media queries
+@include mixins.respond-min(variables.$bp-md) {
+  .footer {
+    &__content {
+      grid-template-columns: max-content 1fr max-content;
+      column-gap: variables.$fluid-footer-col-gap;
+      justify-items: start;
+      text-align: left;
+    }
+
+    .logo {
+      margin-bottom: variables.$base-spacing * 2.2;
+    }
+
+    &__nav-list {
+      grid-template-rows: repeat(3, auto);
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      column-gap: variables.$fluid-footer-col-gap;
+    }
+
+    &__cta-and-copyright {
+      text-align: right;
+    }
   }
 }

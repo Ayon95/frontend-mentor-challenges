@@ -1,15 +1,18 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-header {
+.header {
   --header-height: 6.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   width: 100%;
   height: var(--header-height);
-  padding: 0 variables.$base-spacing * 1.1;
   background-color: variables.$color-white;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .primary-nav {

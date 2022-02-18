@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "./variables";
+
+@mixin site-layout-grid {
+  display: grid;
+  // The max width of the content container is clamped between 75rem and 104rem
+  grid-template-columns:
+    [full-start] 1fr [content-start] Min(
+      clamp(75rem, 80vw, 104rem),
+      calc(100% - #{variables.$base-spacing * 2})
+    )
+    [content-end] 1fr [full-end];
+  column-gap: variables.$base-spacing;
+}
+
+@mixin respond-min($breakpoint) {
+  @media only screen and (min-width: #{$breakpoint / 16 * 1em}) {
+    @content;
+  }
+}
+
+@mixin card-responsive-grid($breakpoint: "") {
+  @if $breakpoint == variables.$bp-lg {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        min-content,
+        clamp(21rem, 18.1vw, #{map.get(variables.$card-max-width, "lg-up")})
+      )
+    );
+  } @else {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, map.get(variables.$card-max-width, "lg-down"))
+    );
+  }
+}

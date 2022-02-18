@@ -36,7 +36,23 @@ $font-weight-bold: 700;
 
 $base-spacing: 2rem;
 $section-margin-bottom: $base-spacing * 7.5;
+$section-subtitle-max-width: 64.7ch;
+$major-container-max-width: (
+  "lg-down": 80rem,
+  "lg-up": 103.5rem,
+);
+$card-max-width: (
+  "lg-down": 33.5rem,
+  "lg-up": 23.7rem,
+);
+$cards-col-spacing: 30px;
 $base-border-radius: 6px;
+$fluid-footer-col-gap: clamp(#{$base-spacing * 3}, 8.5vw, #{$base-spacing * 6});
+
+/*----------- Breakpoints ----------- */
+// In px
+$bp-md: 850;
+$bp-lg: 1200;
 
 /*----------- Miscellaneous ----------- */
 

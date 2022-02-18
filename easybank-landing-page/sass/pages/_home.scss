@@ -1,9 +1,10 @@
+@use "sass:map";
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 // Common styles
 .hero,
 .benefits {
-  padding: 0 variables.$base-spacing;
   margin-bottom: variables.$section-margin-bottom;
 }
 
@@ -25,7 +26,8 @@
   }
 
   &__subtitle {
-    margin: variables.$base-spacing 0 variables.$base-spacing * 1.74 0;
+    margin: variables.$base-spacing auto variables.$base-spacing * 1.74 auto;
+    max-width: variables.$section-subtitle-max-width;
   }
 }
 
@@ -34,24 +36,54 @@
 .benefits {
   text-align: center;
 
+  &__list {
+    display: grid;
+    @include mixins.card-responsive-grid;
+    justify-content: center;
+    row-gap: variables.$base-spacing * 1.8;
+    column-gap: variables.$cards-col-spacing;
+  }
+
   &__subtitle {
-    margin: variables.$base-spacing 0 variables.$base-spacing * 3 0;
+    margin: variables.$base-spacing auto variables.$base-spacing * 3 auto;
+    max-width: variables.$section-subtitle-max-width;
   }
 }
 
 // Articles section
 
 .articles {
-  padding: 0 variables.$base-spacing;
-  margin-bottom: variables.$section-margin-bottom -
-    (variables.$base-spacing * 2.6);
   &__list {
     display: grid;
-    gap: variables.$base-spacing * 1.5;
+    @include mixins.card-responsive-grid;
+    justify-content: center;
+    gap: variables.$cards-col-spacing;
   }
 
   &__title {
     text-align: center;
     margin-bottom: variables.$base-spacing * 1.7;
+  }
+}
+
+// Media queries
+
+@include mixins.respond-min(variables.$bp-lg) {
+  .benefits {
+    text-align: left;
+
+    &__subtitle {
+      margin: variables.$base-spacing 0 variables.$base-spacing * 3 0;
+    }
+  }
+
+  .articles__title {
+    text-align: left;
+  }
+
+  .benefits__list,
+  .articles__list {
+    justify-content: start;
+    @include mixins.card-responsive-grid(variables.$bp-lg);
   }
 }
