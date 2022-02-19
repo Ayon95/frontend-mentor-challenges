@@ -2,7 +2,8 @@
 @use "../abstracts/mixins";
 
 .header {
-  --header-height: clamp(6.5rem, 6vw, 7.5rem);
+  // --header-height: clamp(6.5rem, 6vw, 7.5rem);
+  --header-height: 6.5rem;
   position: fixed;
   width: 100%;
   height: var(--header-height);
@@ -44,6 +45,7 @@
   }
 
   &__link {
+    display: inline-block;
     color: variables.$color-brand-tertiary;
   }
 
@@ -56,6 +58,7 @@
 
 @include mixins.respond-min(variables.$bp-md) {
   .header {
+    height: auto;
     .button {
       display: inline-block;
     }
@@ -83,8 +86,37 @@
     }
 
     &__link {
+      padding: 2.9rem 0;
       color: variables.$color-body-text;
       font-size: variables.$base-font-size * 0.8;
+    }
+  }
+}
+
+@include mixins.detect-hover-support {
+  .primary-nav {
+    &__link {
+      position: relative;
+      transition: color variables.$base-transition-duration;
+    }
+
+    &__link:hover {
+      color: variables.$color-brand-tertiary;
+    }
+
+    &__link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5px;
+      background-image: variables.$primary-gradient;
+      transform: scale(0);
+      transition: transform variables.$base-transition-duration;
+    }
+
+    &__link:hover::before {
+      transform: scale(1);
     }
   }
 }

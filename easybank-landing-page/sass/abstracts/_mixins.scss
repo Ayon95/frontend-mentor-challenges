@@ -19,6 +19,12 @@
   }
 }
 
+@mixin detect-hover-support {
+  @media only screen and (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
 @mixin card-responsive-grid($breakpoint: "") {
   @if $breakpoint == variables.$bp-lg {
     grid-template-columns: repeat(

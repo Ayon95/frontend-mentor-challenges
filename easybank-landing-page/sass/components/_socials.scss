@@ -15,6 +15,8 @@
   }
 }
 
+// Media queries
+
 @include mixins.respond-min(variables.$bp-md) {
   .socials__icon {
     width: 2.2rem;

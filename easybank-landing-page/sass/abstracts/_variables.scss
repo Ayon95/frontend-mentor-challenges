@@ -56,8 +56,16 @@ $bp-lg: 1200;
 
 /*----------- Miscellaneous ----------- */
 
+$base-transition-duration: 0.2s;
+
 $nav-menu-container-gradient: linear-gradient(
   to bottom,
   map.get($color-dark-blue, "semi-transparent"),
   transparent
+);
+
+$primary-gradient: linear-gradient(
+  to right,
+  $color-brand-primary,
+  $color-brand-secondary
 );

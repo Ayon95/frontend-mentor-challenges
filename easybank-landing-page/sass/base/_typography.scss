@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 button {
   font-family: "Public Sans", sans-serif;
@@ -80,5 +81,17 @@ button {
 
   &__copyright {
     font-size: variables.$base-font-size * 0.8;
+  }
+}
+
+// Media queries
+
+@include mixins.detect-hover-support {
+  .footer__nav-link {
+    transition: color variables.$base-transition-duration;
+
+    &:hover {
+      color: variables.$color-brand-primary;
+    }
   }
 }

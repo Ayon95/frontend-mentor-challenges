@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .button {
   border: none;
@@ -6,10 +7,19 @@
   border-radius: 10rem;
 
   &--primary {
-    background-image: linear-gradient(
-      to right,
-      variables.$color-brand-primary,
-      variables.$color-brand-secondary
-    );
+    background-image: variables.$primary-gradient;
+  }
+}
+
+// Media queries
+
+@include mixins.detect-hover-support {
+  .button--primary {
+    cursor: pointer;
+    transition: filter variables.$base-transition-duration;
+
+    &:hover {
+      filter: brightness(120%) saturate(0.6);
+    }
   }
 }
