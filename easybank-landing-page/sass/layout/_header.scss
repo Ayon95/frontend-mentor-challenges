@@ -2,12 +2,12 @@
 @use "../abstracts/mixins";
 
 .header {
-  border: solid red;
-  --header-height: 6.5rem;
+  --header-height: clamp(6.5rem, 6vw, 7.5rem);
   position: fixed;
   width: 100%;
   height: var(--header-height);
   background-color: variables.$color-white;
+  z-index: 10;
 
   &__content {
     display: flex;

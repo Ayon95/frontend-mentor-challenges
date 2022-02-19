@@ -9,8 +9,8 @@
 @use "./components/article-preview-card";
 @use "./components/socials";
 // Layout
-@use "./layout/grid";
 @use "./layout/header";
 @use "./layout/footer";
+@use "./layout/grid";
 // Pages
 @use "./pages/home";

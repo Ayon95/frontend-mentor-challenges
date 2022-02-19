@@ -15,10 +15,10 @@
   & > *:not(.hero) {
     grid-column: content-start / content-end;
   }
+}
 
-  .hero {
-    grid-column: full-start / full-end;
-  }
+.hero {
+  grid-column: full-start / full-end;
 }
 
 .footer {
@@ -26,5 +26,13 @@
 
   & > * {
     grid-column: content-start / content-end;
+  }
+}
+
+// Media queries
+
+@include mixins.respond-min(variables.$bp-lg) {
+  .hero {
+    grid-column: content-start / full-end;
   }
 }

@@ -12,15 +12,28 @@ button {
   font-weight: variables.$font-weight-regular;
 
   &--1 {
-    font-size: variables.$base-font-size * 2.1;
+    font-size: clamp(
+      #{variables.$base-font-size * 2.1},
+      3.7vw,
+      #{variables.$base-font-size * 2.9}
+    );
   }
 
   &--2 {
-    font-size: variables.$base-font-size * 1.73;
+    font-size: clamp(
+      #{variables.$base-font-size * 1.73},
+      4vw,
+      #{variables.$base-font-size * 2}
+    );
   }
 
   &--3 {
     font-size: variables.$base-font-size * 1.06;
+    font-size: clamp(
+      #{variables.$base-font-size * 1.06},
+      4vw,
+      #{variables.$base-font-size * 1.25}
+    );
   }
 
   &--4 {
@@ -33,7 +46,11 @@ button {
 
   &--1 {
     line-height: 1.6;
-    font-size: variables.$base-font-size * 0.8;
+    font-size: clamp(
+      #{variables.$base-font-size * 0.8},
+      4vw,
+      #{variables.$base-font-size * 0.95}
+    );
   }
 
   &--2 {
@@ -46,9 +63,22 @@ button {
   }
 }
 
+.benefit__description {
+  line-height: 1.6;
+  font-size: clamp(
+    #{variables.$base-font-size * 0.8},
+    4vw,
+    #{variables.$base-font-size * 0.85}
+  );
+}
+
 .footer {
   &__nav-link {
     color: variables.$color-light-grayish-blue;
+    font-size: variables.$base-font-size * 0.8;
+  }
+
+  &__copyright {
     font-size: variables.$base-font-size * 0.8;
   }
 }

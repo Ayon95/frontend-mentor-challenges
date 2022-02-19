@@ -4,7 +4,7 @@
 .footer {
   background-color: variables.$color-brand-tertiary;
   padding: variables.$base-spacing * 2 0;
-  margin-top: 9.7rem;
+  margin-top: variables.$base-spacing * 7.5;
 
   &__content {
     display: grid;
@@ -15,7 +15,11 @@
 
   .logo {
     display: inline-block;
-    margin-bottom: variables.$base-spacing * 1.5;
+    margin-bottom: clamp(
+      #{variables.$base-spacing * 1.5},
+      3.5vw,
+      #{variables.$base-spacing * 2.4}
+    );
   }
 
   &__nav-list {
@@ -31,15 +35,12 @@
 // Media queries
 @include mixins.respond-min(variables.$bp-md) {
   .footer {
+    margin-top: variables.$base-spacing * 3;
     &__content {
       grid-template-columns: max-content 1fr max-content;
       column-gap: variables.$fluid-footer-col-gap;
       justify-items: start;
       text-align: left;
-    }
-
-    .logo {
-      margin-bottom: variables.$base-spacing * 2.2;
     }
 
     &__nav-list {

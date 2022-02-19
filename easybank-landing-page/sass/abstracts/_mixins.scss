@@ -6,7 +6,7 @@
   // The max width of the content container is clamped between 75rem and 104rem
   grid-template-columns:
     [full-start] 1fr [content-start] Min(
-      clamp(75rem, 80vw, 104rem),
+      clamp(75rem, 80vw, 107rem),
       calc(100% - #{variables.$base-spacing * 2})
     )
     [content-end] 1fr [full-end];

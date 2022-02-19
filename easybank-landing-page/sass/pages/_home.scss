@@ -16,9 +16,10 @@
   background-size: contain;
 
   &__image {
+    padding: variables.$base-spacing * 0.8;
     width: 100%;
-    margin-top: -5rem;
-    margin-bottom: variables.$base-spacing * 1.25;
+    margin-top: -7.6rem;
+    margin-bottom: variables.$base-spacing * 0.45;
   }
 
   &__text-content {
@@ -45,7 +46,13 @@
   }
 
   &__subtitle {
-    margin: variables.$base-spacing auto variables.$base-spacing * 3 auto;
+    margin: variables.$base-spacing auto
+      clamp(
+        #{variables.$base-spacing * 3},
+        5vw,
+        #{variables.$base-spacing * 3.5}
+      )
+      auto;
     max-width: variables.$section-subtitle-max-width;
   }
 }
@@ -69,11 +76,32 @@
 // Media queries
 
 @include mixins.respond-min(variables.$bp-lg) {
+  .hero {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: -9.5rem;
+    background-image: url("../images/bg-intro-desktop.svg");
+    background-position: top -14rem left 45rem;
+    overflow: hidden;
+
+    &__image {
+      width: clamp(63rem, 54vw, 74rem);
+      margin: unset;
+      transform: translateX(13rem) translateY(-4.3rem);
+    }
+
+    &__text-content {
+      margin: -#{variables.$base-spacing * 6} variables.$base-spacing * 2.5 0 0;
+      text-align: left;
+    }
+  }
   .benefits {
     text-align: left;
 
     &__subtitle {
-      margin: variables.$base-spacing 0 variables.$base-spacing * 3 0;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
