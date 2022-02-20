@@ -118,11 +118,12 @@ button {
 // Media queries
 
 @include mixins.detect-hover-support {
+  .article-preview__title,
   .footer__nav-link {
     transition: color variables.$base-transition-duration;
-
-    &:hover {
-      color: variables.$color-brand-primary;
-    }
+  }
+  .article-preview__title:hover,
+  .footer__nav-link:hover {
+    color: variables.$color-brand-primary;
   }
 }
