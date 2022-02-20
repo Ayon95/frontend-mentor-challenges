@@ -27,6 +27,19 @@ ul {
   list-style: none;
 }
 
+// Focus visible styles (these styles will be shown when the user focuses on an interactive element with the Tab key
+// Remove default focus style from elements that are in focus but not considered focus visible
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid variables.$color-brand-secondary;
+  outline-offset: 2px;
+}
+
+// Media queries
+
 @include mixins.respond-min(variables.$bp-lg) {
   html {
     font-size: 65%;
