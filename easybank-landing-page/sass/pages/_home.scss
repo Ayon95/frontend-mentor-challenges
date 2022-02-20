@@ -71,7 +71,11 @@
 
   &__title {
     text-align: center;
-    margin-bottom: variables.$base-spacing * 1.7;
+    margin-bottom: clamp(
+      #{variables.$base-spacing * 1.7},
+      3.5vw,
+      #{variables.$base-spacing * 2.5}
+    );
   }
 }
 
@@ -118,6 +122,7 @@
   }
   .benefits {
     text-align: left;
+    margin-bottom: variables.$section-margin-bottom * 1.25;
 
     &__subtitle {
       margin-left: 0;
