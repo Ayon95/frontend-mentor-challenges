@@ -28,7 +28,7 @@
           <img
             class="card__image"
             src="./images/image-equilibrium.jpg"
-            alt="A shiny glass cube in a blue background"
+            alt=""
           />
         </div>
         <h2 class="card__title">
@@ -44,6 +44,7 @@
               width="11"
               height="18"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z"
@@ -59,6 +60,7 @@
               width="17"
               height="17"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z"
@@ -68,17 +70,20 @@
             <p>3 days left</p>
           </li>
         </ul>
-        <footer class="card__footer">
+        <footer
+          class="card__footer"
+          aria-label="Equilibrium author information"
+        >
           <img
             src="./images/image-avatar.png"
-            alt="A young man"
+            alt="Jules Wyvern's profile picture"
             class="card__avatar"
           />
           <p>Creation of <a href="#" class="card__author">Jules Wyvern</a></p>
         </footer>
       </article>
     </main>
-    <footer class="site__footer">
+    <footer class="site__footer" aria-label="Footer">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
