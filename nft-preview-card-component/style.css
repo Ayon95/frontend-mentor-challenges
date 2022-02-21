@@ -172,3 +172,11 @@ main {
 .weight-400 {
   font-weight: 400;
 }
+
+.visually-hidden {
+  position: absolute;
+  left: -1000rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
