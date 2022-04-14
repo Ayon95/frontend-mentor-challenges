@@ -30,9 +30,9 @@
       </p>
     </header>
     <main>
-      <ul class="options">
+      <!-- <ul class="options">
         <li
-          class="options__item options__item--scissors"
+          class="options__item options__item--scissors bg-scissors"
           data-option="scissors"
         >
           <button class="options__btn">
@@ -43,7 +43,10 @@
             />
           </button>
         </li>
-        <li class="options__item options__item--spock" data-option="spock">
+        <li
+          class="options__item options__item--spock bg-spock"
+          data-option="spock"
+        >
           <button class="options__btn">
             <img
               src="./images/icon-spock.svg"
@@ -52,7 +55,10 @@
             />
           </button>
         </li>
-        <li class="options__item options__item--paper" data-option="paper">
+        <li
+          class="options__item options__item--paper bg-paper"
+          data-option="paper"
+        >
           <button class="options__btn">
             <img
               src="./images/icon-paper.svg"
@@ -61,7 +67,10 @@
             />
           </button>
         </li>
-        <li class="options__item options__item--lizard" data-option="lizard">
+        <li
+          class="options__item options__item--lizard bg-lizard"
+          data-option="lizard"
+        >
           <button class="options__btn">
             <img
               src="./images/icon-lizard.svg"
@@ -70,7 +79,10 @@
             />
           </button>
         </li>
-        <li class="options__item options__item--rock" data-option="rock">
+        <li
+          class="options__item options__item--rock bg-rock"
+          data-option="rock"
+        >
           <button class="options__btn">
             <img
               src="./images/icon-rock.svg"
@@ -79,21 +91,29 @@
             />
           </button>
         </li>
-      </ul>
+      </ul> -->
       <div class="result-display" id="user-selection">
-        <!-- <div class="selection">
+        <div class="selection">
+          <div class="selection__image-outer-container bg-scissors">
+            <div class="selection__image-inner-container">
+              <img src="./images/icon-scissors.svg" alt="" />
+            </div>
+          </div>
           <p class="selection__text">You picked</p>
-          <img src="./images/icon-scissors.svg" alt="" />
-        </div>
-        <div>
-          <p class="result">You lose</p>
-          <button class="btn btn--solid btn--play-again">Play again</button>
         </div>
         <div class="selection" id="computer-selection">
+          <div class="selection__image-outer-container bg-spock">
+            <div class="selection__image-inner-container">
+              <img src="./images/icon-spock.svg" alt="" />
+            </div>
+          </div>
           <p class="selection__text">The house picked</p>
-          <img src="./images/icon-spock.svg" alt="" />
         </div>
-      </div> -->
+        <div class="result">
+          <p class="result__text">You lose</p>
+          <button class="btn btn--solid btn--play-again">Play again</button>
+        </div>
+      </div>
       <button class="btn btn--outlined btn--rules">Rules</button>
     </main>
     <footer>
@@ -101,7 +121,10 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/Ayon95" target="_blank"
+          >Mushfiq Rahman</a
+        >.
       </p>
     </footer>
     <div
