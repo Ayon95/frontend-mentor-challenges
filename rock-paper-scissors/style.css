@@ -12,6 +12,7 @@
   --base-letter-spacing: 1px;
   --color-white: #fff;
   --color-dark-greyish-blue: hsl(229, 25%, 31%);
+  --color-light-greyish-blue: hsl(217, 16%, 45%);
   --option-outer-padding: clamp(1rem, 2vw, 1.5rem);
   --option-inner-padding: clamp(1.5rem, 2vw, 2rem);
   --fade-in-out-duration: 0.4s;
@@ -54,7 +55,7 @@ header {
   max-width: 70rem;
   margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 2rem);
-  border: 3px solid hsl(217, 16%, 45%);
+  border: 3px solid var(--color-light-greyish-blue);
   border-radius: clamp(5px, 2vw, 1.5rem);
 }
 
@@ -383,6 +384,17 @@ footer a {
     opacity: 0;
     transform: translateY(5rem);
   }
+}
+
+/* Keyboard focus styles */
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(0, 255, 119);
+  outline-offset: 3px;
 }
 
 /* Hover styles */
