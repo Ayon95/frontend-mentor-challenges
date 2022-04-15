@@ -26,11 +26,11 @@
       <h1 class="title">Rock Paper Scissors Lizard Spock</h1>
       <p class="score">
         <span class="score__text">Score</span>
-        <span class="score__number">12</span>
+        <span class="score__number">0</span>
       </p>
     </header>
     <main>
-      <!-- <ul class="options">
+      <ul class="options">
         <li
           class="options__item options__item--scissors bg-scissors"
           data-option="scissors"
@@ -91,26 +91,26 @@
             />
           </button>
         </li>
-      </ul> -->
-      <div class="result-display" id="user-selection">
-        <div class="selection">
-          <div class="selection__image-outer-container bg-scissors">
+      </ul>
+      <div class="result-display display-none">
+        <div class="selection selection--player">
+          <div class="selection__image-outer-container">
             <div class="selection__image-inner-container">
-              <img src="./images/icon-scissors.svg" alt="" />
+              <img src="" alt="" />
             </div>
           </div>
           <p class="selection__text">You picked</p>
         </div>
-        <div class="selection" id="computer-selection">
-          <div class="selection__image-outer-container bg-spock">
+        <div class="selection selection--computer">
+          <div class="selection__image-outer-container">
             <div class="selection__image-inner-container">
-              <img src="./images/icon-spock.svg" alt="" />
+              <img src="" alt="" />
             </div>
           </div>
           <p class="selection__text">The house picked</p>
         </div>
         <div class="result">
-          <p class="result__text">You lose</p>
+          <p class="result__text"></p>
           <button class="btn btn--solid btn--play-again">Play again</button>
         </div>
       </div>
@@ -144,5 +144,6 @@
         <img src="./images/image-rules-bonus.svg" alt="rules of the game" />
       </div>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
