@@ -92,7 +92,7 @@
           </button>
         </li>
       </ul>
-      <div class="result-display display-none">
+      <div class="result-display display-none" aria-live="polite">
         <div class="selection selection--player">
           <div class="selection__image-outer-container">
             <div class="selection__image-inner-container">
@@ -128,20 +128,26 @@
       </p>
     </footer>
     <div
-      class="modal"
+      class="modal display-none"
       role="dialog"
       aria-hidden="true"
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
     >
-      <div class="modal__overlay"></div>
       <div class="modal__content">
-        <h2 class="visually-hidden" id="modal-title">Rules of the game</h2>
+        <h2 id="modal-title">Rules</h2>
         <p class="visually-hidden" id="modal-description">
           Check out the image to see how the options are linked to one another,
           and who beats whom.
         </p>
-        <img src="./images/image-rules-bonus.svg" alt="rules of the game" />
+        <img
+          class="modal__rules-image"
+          src="./images/image-rules-bonus.svg"
+          alt="rules of the game"
+        />
+        <button class="modal__close-btn">
+          <img src="./images/icon-close.svg" alt="close modal" />
+        </button>
       </div>
     </div>
     <script src="./index.js"></script>

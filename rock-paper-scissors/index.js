@@ -15,7 +15,11 @@ const computerSelectionIcon =
 const resultDisplay = document.querySelector(".result-display");
 const resultText = resultDisplay.querySelector(".result__text");
 const playAgainButton = resultDisplay.querySelector(".btn--play-again");
+const rulesButton = document.querySelector(".btn--rules");
+const rulesModal = document.querySelector(".modal");
+const rulesModalCloseButton = rulesModal.querySelector(".modal__close-btn");
 
+let selectionMade = false;
 const options = ["rock", "paper", "scissors", "lizard", "spock"];
 const optionsWeakAgainst = {
   rock: ["scissors", "lizard"],
@@ -29,7 +33,7 @@ const outcomes = {
   PLAYER_WON: "You won",
   PLAYER_LOST: "You lost",
 };
-const fadeInOutDuration = 300;
+const fadeInOutDuration = 400;
 
 function getComputerSelection() {
   const index = Math.floor(Math.random() * 5);
@@ -94,7 +98,8 @@ function fadeOut(elem) {
 
 function handleClickOption(e) {
   const optionElem = e.target.closest(".options__item");
-  if (!optionElem) return;
+  if (!optionElem || selectionMade) return;
+  selectionMade = true;
   const playerSelection = optionElem.dataset.option;
   const computerSelection = getComputerSelection();
   const outcome = getOutcome(playerSelection, computerSelection);
@@ -107,6 +112,7 @@ function handleClickOption(e) {
 }
 
 function resetGame() {
+  selectionMade = false;
   fadeOut(resultDisplay);
   setTimeout(() => {
     restoreResultDisplay();
@@ -114,5 +120,39 @@ function resetGame() {
   }, fadeInOutDuration);
 }
 
+function toggleRulesModalVisibility() {
+  const ariaHidden = rulesModal.getAttribute("aria-hidden");
+  if (ariaHidden === "true") fadeIn(rulesModal);
+  else fadeOut(rulesModal);
+  rulesModal.setAttribute(
+    "aria-hidden",
+    ariaHidden === "true" ? "false" : "true"
+  );
+}
+
+function trapFocusWithinRulesModal(e) {
+  if (e.key !== "Tab") return;
+  rulesModalCloseButton.focus();
+  e.preventDefault();
+}
+
 optionsElem.addEventListener("click", handleClickOption);
 playAgainButton.addEventListener("click", resetGame);
+rulesButton.addEventListener("click", toggleRulesModalVisibility);
+
+rulesModal.addEventListener("click", function (e) {
+  if (
+    e.target.classList.contains("modal") ||
+    e.target.closest(".modal__close-btn")
+  ) {
+    toggleRulesModalVisibility();
+  }
+});
+
+document.addEventListener("keydown", function (e) {
+  const modalIsOpen = rulesModal.getAttribute("aria-hidden") === "false";
+  if (modalIsOpen) trapFocusWithinRulesModal(e);
+  if (e.key === "Escape" && modalIsOpen) {
+    toggleRulesModalVisibility();
+  }
+});

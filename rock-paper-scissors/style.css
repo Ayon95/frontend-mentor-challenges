@@ -14,7 +14,7 @@
   --color-dark-greyish-blue: hsl(229, 25%, 31%);
   --option-outer-padding: clamp(1rem, 2vw, 1.5rem);
   --option-inner-padding: clamp(1.5rem, 2vw, 2rem);
-  --fade-in-out-duration: 0.3s;
+  --fade-in-out-duration: 0.4s;
 }
 
 html {
@@ -241,10 +241,60 @@ footer {
   margin-top: 3rem;
   text-align: center;
   letter-spacing: var(--base-letter-spacing);
+  line-height: 1.5;
 }
 
 footer a {
   color: hsl(189, 58%, 57%);
+}
+
+/* Rules modal */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: var(--body-padding);
+  background-color: rgb(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.modal__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4rem;
+  width: 100%;
+  max-width: 40rem;
+  padding: var(--body-padding);
+  border-radius: 5px;
+  color: var(--color-dark-greyish-blue);
+  background-color: var(--color-white);
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+#modal-title,
+.modal__rules-image,
+.modal__close-btn {
+  grid-column: 1/-1;
+}
+
+#modal-title {
+  justify-self: center;
+}
+
+.modal__close-btn {
+  border: none;
+  justify-self: center;
+  cursor: pointer;
+}
+
+.modal__rules-image {
+  width: 100%;
 }
 
 /* Utilities */
@@ -289,6 +339,14 @@ footer a {
   );
 }
 
+.visually-hidden {
+  position: absolute;
+  left: -1000rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .display-none {
   display: none;
 }
@@ -306,7 +364,7 @@ footer a {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(-5rem);
+    transform: translateY(5rem);
   }
 
   100% {
@@ -348,6 +406,8 @@ footer a {
 /* Breakpoints */
 
 @media only screen and (min-width: 670px) {
+  /* Result display */
+
   .result-display {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -364,6 +424,25 @@ footer a {
     order: 2;
     grid-column: unset;
   }
+
+  /* Modal */
+
+  #modal-title {
+    grid-column: 1 / span 1;
+    justify-self: start;
+  }
+
+  .modal__close-btn {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    justify-self: end;
+  }
+
+  .modal__rules-image {
+    margin-bottom: 2rem;
+  }
+
+  /* Rules button */
 
   .btn--rules {
     margin-left: auto;
